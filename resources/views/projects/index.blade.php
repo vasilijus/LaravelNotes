@@ -19,11 +19,19 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    All Projects
+                    <h2>
+                        All Projects
+                    </h2>
                 </div>
-            @foreach ($projects as $project)
-                <li>{{ $project }}</li>
-            @endforeach
+
+                @foreach ($projects as $project)
+                    <li>
+                        <div>
+                        <a href="{{ url("/projects/{$project->id}")}}" >{{ $project->id }}: {{ $project->title }} </a>
+                        <p>{{ $project->description }} Created: {{ $project->created_at->diffForHumans() }}, Updated: {{ $project->updated_at->diffForHumans() }}</p>
+                        </div>
+                    </li>
+                @endforeach
 
                
             </div>
