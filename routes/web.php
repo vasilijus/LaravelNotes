@@ -19,7 +19,7 @@ use App\Services\Twitter;
 //     return view('welcome');
 // });
 Route::get('/' , function( Twitter $twitter) {
-    dd($twitter);
+    // dd($twitter);
     return view('welcome');
 });
 
