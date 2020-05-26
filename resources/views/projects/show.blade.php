@@ -32,7 +32,8 @@
 
                 <label class="checkbox {{ $task->completed ? 'is-complete':''}}"  for="completed">
                     <input type="checkbox" name="completed" onChange="this.form.submit()" {{ $task->completed ? 'checked' : ''}} >
-                    {{ $task }}
+                    {{ $task->id }} @ {{ $task->created_at }}
+                    <p>{{ $task->description }} </p>
                 </label>
             </form>
         </div>
