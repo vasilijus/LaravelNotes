@@ -1,22 +1,19 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+@extends('layouts.app')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-     
-    </head>
-    <body>
+
+@section('content')
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+
+            <div class="card-header">{{ __('Create Projects') }}</div>
 
 
             <div class="content">
-                <div class="title m-b-md">
-                    Create Project
-                </div>
+     
 
                 <form method="POST" action="/projects">
                 
@@ -37,7 +34,7 @@
 
                     <div class="field">
                         <div class="control">
-                            <button type="submit">Add Project</button>
+                            <button class="btn-primary" type="submit">Add Project</button>
                         </div>
                     </div>
 
@@ -47,5 +44,16 @@
                
             </div>
         </div>
-    </body>
-</html>
+
+
+    </div>
+</div>
+
+<br>
+
+
+
+
+
+
+@endsection

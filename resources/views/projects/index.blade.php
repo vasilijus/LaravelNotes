@@ -1,39 +1,37 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                <div class="card-header">{{ __('All Projects') }}</div>
+
+            <!-- {{ $projects }}
+            [{
+                "id":1,"title":"proj1","description":"qweqweqwe",
+                "created_at":"2020-05-26 21:06:39","updated_at":"2020-05-26 21:06:39",
+                "user_id":1
+            }]  -->
+            
+            @foreach ($projects as $project)
+            <div class="form-group row">
+
+                <label class="col-md-1 col-form-label text-md-right">{{ $project->id }}</label>
+                <div class="col-md-9">
+                    <a href="{{ url("/projects/{$project->id}")}}" > {{ $project->title }} </a>
+                    <p>{{ $project->description }} Created: {{ $project->created_at->diffForHumans() }}, Updated: {{ $project->updated_at->diffForHumans() }}</p>
                 </div>
-            @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    <h2>
-                        All Projects
-                    </h2>
-                </div>
+            </div>
+            @endforeach
 
-                @foreach ($projects as $project)
-                    <li>
-                        <div>
-                        <a href="{{ url("/projects/{$project->id}")}}" >{{ $project->id }}: {{ $project->title }} </a>
-                        <p>{{ $project->description }} Created: {{ $project->created_at->diffForHumans() }}, Updated: {{ $project->updated_at->diffForHumans() }}</p>
-                        </div>
-                    </li>
-                @endforeach
 
-               
             </div>
         </div>
+    </div>
+</div>
+
 @endsection
