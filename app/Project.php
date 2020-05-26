@@ -9,7 +9,7 @@ class Project extends Model
     // use $fillable - the fields to send || $guarded - except everything except these fields(ANTI)
     protected $fillable = [
 
-        'title', 'description'
+        'title', 'description','user_id'
 
     ];
 
@@ -25,5 +25,10 @@ class Project extends Model
 
         $this->tasks()->create($task);
 
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

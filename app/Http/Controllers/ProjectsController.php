@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 //use \App\Project;
 
+
 class ProjectsController extends Controller
 {
     //
@@ -37,6 +38,9 @@ class ProjectsController extends Controller
             'title' => ['required', 'min:3'],
             'description' => 'required'
         ]);
+
+        $validatedAttr = array_merge($validatedAttr, ['user_id' => auth()->user()->id]);
+        // dd($validatedAttr);
         \App\Project::create( $validatedAttr );
         // $project = new \App\Project();
 
