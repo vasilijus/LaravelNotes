@@ -17,15 +17,19 @@
             }]  -->
             
             @foreach ($projects as $project)
-            <div class="form-group row">
+            <div class="form-group row pt-4">
 
                 <label class="col-md-1 col-form-label text-md-right">{{ $project->id }}</label>
                 <div class="col-md-9">
-                    <a href="{{ url("/projects/{$project->id}")}}" > {{ $project->title }} </a>
-                    <p>{{ $project->description }} Created: {{ $project->created_at->diffForHumans() }}, Updated: {{ $project->updated_at->diffForHumans() }}</p>
+                    <a href="{{ url("/projects/{$project->id}")}}" > 
+                        <h2>{{ $project->title }} </h2>
+                    </a>
+                    <p>
+                        {{ $project->description }} Created: {{ $project->created_at->diffForHumans() }}, Updated: {{ $project->updated_at->diffForHumans() }}
+                    </p>
                 </div>
 
-            </div>
+            </div><hr>
             @endforeach
 
 

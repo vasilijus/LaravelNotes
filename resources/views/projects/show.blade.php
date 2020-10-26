@@ -11,45 +11,47 @@
                 <div class="card-header">{{ __('Show Projects') }}</div>
 
                 <div class="card-header">
-                    <p> {{ $project->title }} :  {{ $project->description }}</p>
+
+                    <div class="row">
+                        <div class="col">
+                            <p> {{ $project->title }} :  {{ $project->description }}</p>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col-4">
+                            <a class="btn btn-info float-right" href="/projects/{{ $project->id }}/edit">Edit Project</a>
+                        </div>
+                    </div>
+
                 </div>
 
 
+                @if ($project->tasks->count())
+                    <div class="box card-body">
 
-            <div class="field">
-                <div class="control">
-                    <a class="btn btn-info" href="/projects/{{ $project->id }}/edit">Edit Project</a>
-                </div>
-            </div>
+                        <h2 class="title">Task List</h2>
 
+                        @foreach( $project->tasks as $task)
+                        <div>
 
-            @if ($project->tasks->count())
-            <div class="box">
+                            <form method="POST" action="/completed-tasks/{{ $task->id }}">
 
-                <h2 class="title">Task List</h2>
+                                @if ($task->completed)
+                                    @method('DELETE')
+                                @endif
 
-                @foreach( $project->tasks as $task)
-                <div>
+                                @csrf
 
-                    <form method="POST" action="/completed-tasks/{{ $task->id }}">
+                                <label class="checkbox {{ $task->completed ? 'is-complete':''}}"  for="completed">
+                                    <input type="checkbox" name="completed" onChange="this.form.submit()" {{ $task->completed ? 'checked' : ''}} >
+                                    {{ $task->id }}. <i>Created @: </i> {{ $task->created_at }}
+                                    <p> - {{ $task->description }} </p>
+                                </label>
+                            </form>
+                        </div>
+                        @endforeach
 
-                        @if ($task->completed)
-                            @method('DELETE')
-                        @endif
-
-                        @csrf
-
-                        <label class="checkbox {{ $task->completed ? 'is-complete':''}}"  for="completed">
-                            <input type="checkbox" name="completed" onChange="this.form.submit()" {{ $task->completed ? 'checked' : ''}} >
-                            {{ $task->id }} @ {{ $task->created_at }}
-                            <p>{{ $task->description }} </p>{{ $task->id }}
-                        </label>
-                    </form>
-                </div>
-                @endforeach
-
-            </div>    
-            @endif
+                    </div>    
+                @endif
 
 
             </div>
@@ -73,20 +75,26 @@
                         <div class="card-header">{{ __('New Task') }}</div>
 
 
-                        <div class="control">
-
-                            <input type="text" class="input" name="description" placeholder="New Task" required>
-
+                        <div class="row control p-3">
+                            <div class="col">
+                                <input type="text" class="form-control input" name="description" placeholder="New Task" required>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-info float-right" type="submit" class="button is-link">Add Task</button>
+                            </div>
                         </div>
+
                     </div>
+                    
 
-                    <div class="field">
+                    <!-- <div class="input-group mb-3">
+                        <input type="text" class="form-control" 
+                        placeholder="New Task" name="description"  aria-label="Recipient's username" aria-describedby="basic-addon2" required>
 
-                        <div class="control">
-                            <button type="submit" class="button is-link">Add Task</button>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Add Task</button>
                         </div>
-                        
-                    </div>
+                    </div> -->
 
 
                     @include ('reusable_components.errors')
