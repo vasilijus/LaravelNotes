@@ -31,6 +31,14 @@ In dev mode
     'engine' => null,
 ],
 ```
+
+## Screenshots 
+
+<a href="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_1.png?raw=true">
+<img scr="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_1.png?raw=true"></a>
+<a href="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_2.png?raw=true">
+<img scr="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_2.png?raw=true"></a>
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
