@@ -32,12 +32,13 @@ In dev mode
 ],
 ```
 
-## Screenshots 
+## Screenshots
 
-<a href="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_1.png?raw=true">
-<img scr="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_1.png?raw=true"></a>
-<a href="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_2.png?raw=true">
-<img scr="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_2.png?raw=true"></a>
+<a href="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_1.png" alt="Total Downloads">
+<img width="300px" src="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_1.png?raw=true"></a>
+<a href="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_2.png" alt="Total Downloads">
+<img width="300px" src="https://github.com/vasilijus/LaravelNotes/blob/master/Screenshots%20-%20may%20be%20deleted/shop_list_2.png?raw=true"></a>
+
 
 ## Learning Laravel
 
